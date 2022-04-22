@@ -1,0 +1,24 @@
+@import '../../style/mq-variables.scss';
+
+.wrapper {
+  margin-top: var(--size-8);
+}
+
+.list {
+  li {
+    text-align: center;
+    align-items: center;
+    margin-bottom: var(--size-4);
+  }
+
+  img {
+    border-radius: 10px;
+    margin-bottom: var(--size-2);
+  }
+
+  @media (min-width: $mq-medium) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: var(--size-0) var(--size-3);
+  }
+}

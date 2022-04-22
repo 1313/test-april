@@ -1,0 +1,11 @@
+.wrapper {
+  margin: var(--size-4);
+  text-align: center;
+  flex: 1;
+  min-height: 300px;
+}
+
+.label {
+  display: block;
+  margin-top: var(--size-4);
+}

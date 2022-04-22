@@ -1,0 +1,44 @@
+@import './mq-variables.scss';
+
+:root {
+  --color-light: #feffef;
+  --color-dark: #1c1c1c;
+  --color-background: #2d2d2d;
+  --color-background-dark: #212121;
+  --color-primary: #f9de69;
+  --color-neutral: #c4c4c4;
+
+  --font-family-body: 'Space Mono', monospace;
+  --font-family-heading: 'Alfa Slab One', cursive;
+
+  --font-h1: normal 400 2.5rem/1.2 'Alfa Slab One', cursive;
+  --font-h2: normal 400 1.75rem/1.2 'Alfa Slab One', cursive;
+  --font-h3: normal 400 1.25rem/1.2 'Alfa Slab One', cursive;
+  --font-body: normal 400 1rem/1.4 'Space Mono', monospace;
+  --font-body-small: normal 400 0.825rem/1.125rem 'Space Mono', monospace;
+
+  --size-0: 0.25rem;
+  --size-1: 0.5rem;
+  --size-2: 0.75rem;
+  --size-3: 1rem;
+  --size-4: 1.5rem;
+  --size-5: 2rem;
+  --size-6: 2.5rem;
+  --size-7: 3rem;
+  --size-8: 3.5rem;
+  --size-9: 4rem;
+
+  --bodypadding: 22px;
+}
+
+@media (min-width: $mq-medium) {
+  :root {
+    --bodypadding: 30px;
+
+    --font-h1: normal 400 3.5rem/1.2 'Alfa Slab One', cursive;
+    --font-h2: normal 400 2.25rem/1.2 'Alfa Slab One', cursive;
+    --font-h3: normal 400 1.75rem/1.2 'Alfa Slab One', cursive;
+    --font-body: normal 400 1rem/1.5 'Space Mono', monospace;
+    --font-body-small: normal 400 0.825rem/1.125rem 'Space Mono', monospace;
+  }
+}

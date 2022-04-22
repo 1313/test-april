@@ -1,0 +1,108 @@
+@import '../../style/mq-variables.scss';
+
+.wrapper {
+  margin-top: var(--size-1);
+  background-color: var(--color-light);
+  display: flex;
+  overflow: hidden;
+  border-radius: 0.3rem;
+  color: var(--color-dark);
+
+  @media (min-width: $mq-medium) {
+    margin-top: 0;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    min-height: 200px;
+    padding: var(--size-2);
+  }
+}
+
+.content {
+  padding: var(--size-2);
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $mq-medium) {
+    padding: 0;
+  }
+}
+
+.imageWrapper {
+  overflow: hidden;
+  position: relative;
+  min-height: 100px;
+  width: 100px;
+  display: block;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      img {
+        transform: scale(1.02) translate(-50%, -50%);
+      }
+    }
+  }
+
+  @media (min-width: $mq-medium) {
+    border-radius: 0.5rem;
+    padding-top: 116%;
+    margin-bottom: var(--size-2);
+    width: 100%;
+  }
+}
+
+.texts {
+  flex: 1;
+
+  @media (min-width: $mq-medium) {
+    width: 90%;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: var(--size-3);
+
+  a {
+    color: var(--color-dark);
+    font: var(--font-body-small);
+  }
+}
+
+.favorite {
+  -webkit-appearance: none;
+  background: none;
+  line-height: 0;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.1s;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @media (max-width: calc($mq-medium - 1px)) {
+    svg {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.bar {
+  background-color: var(--color-background-dark);
+  margin: 0 0 var(--size-3);
+  position: sticky;
+  top: 0;
+  border-radius: 0px 0 5px 5px;
+}
+
+.button {
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.1s;
+  padding: var(--size-2);
+}
+
+.label {
+  font: var(--font-body-small);
+  color: var(--color-light);
+  display: block;
+  margin-left: var(--size-2);
+}
