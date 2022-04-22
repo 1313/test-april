@@ -6,17 +6,26 @@ export const useFilter = (characters) => {
   const urlUpdateTimer = useRef(); // A timer to prevent the url to update on every keypress when terms are entered in input
 
   const initialAmount = 24;
-  const [amount, setAmount] = useState(initialAmount);
-  const [term, setTerm] = useState("");
+
+  const [oldAmount, setAmount] = useState(initialAmount);
+  const [oldTerm, setTerm] = useState("");
+  const [oldShowOnlyFavorites, setShowOnlyFavorites] = useState(false);
+
   const [filteredCharacters, setFilteredCharacters] = useState([]);
-  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
 
   const { favorites } = useFavorite();
   const [searchParams, setSearchParams] = useSearchParams();
+  console.log(...searchParams.values());
+  const amount = searchParams.get("amount");
+  const term = searchParams.get("term");
+  const showOnlyFavorites = searchParams.get("favorites");
+
   const [paramsInitiated, setParamsInitiated] = useState(false);
 
   const handleFilter = () => {
+    console.log("handleFilter");
     updateUrl();
+    console.log("showOnly", showOnlyFavorites);
     if (showOnlyFavorites) {
       const results = characters.filter((item) => {
         return favorites.includes(item.id);
@@ -25,6 +34,7 @@ export const useFilter = (characters) => {
       return;
     }
 
+    console.log("term", term);
     if (!term || term.length < 1) {
       setFilteredCharacters(characters);
       return;
